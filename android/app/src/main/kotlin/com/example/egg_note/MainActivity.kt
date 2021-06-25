@@ -1,4 +1,4 @@
-package com.example.egg_note
+package com.alif.egg_note
 
 import io.flutter.embedding.android.FlutterActivity
 

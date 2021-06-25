@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "957966537963",
+    "project_id": "flutter-mvi",
+    "storage_bucket": "flutter-mvi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957966537963:android:72c0cdc39afa101a609aae",
+        "android_client_info": {
+          "package_name": "com.alif.egg_note"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957966537963-iscle8ni7pgev8isek0cdr7d3raeoj28.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGm2qxg3LqCntW_HfydazyCTzB3qt8xQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957966537963-iscle8ni7pgev8isek0cdr7d3raeoj28.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

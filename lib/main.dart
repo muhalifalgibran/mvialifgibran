@@ -1,8 +1,16 @@
 import 'package:egg_note/application/home.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-void main() {
+import 'framework/network/firebase/firebase.dart';
+
+void main() async {
+  // enable this if you using firebase as database
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  await FirebaseNetwork.register();
+
   runApp(MyApp());
 }
 
