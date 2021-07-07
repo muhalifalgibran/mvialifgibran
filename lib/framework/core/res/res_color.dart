@@ -23,6 +23,8 @@ class ResColor extends HexColor {
   static Color accentColor = HexColor('FF8C9F');
   static Color profileBgColor = HexColor('B4B4B4');
 
+  static Color primaryColorMaterial = Colors.deepOrange[400];
+
   // gradient
   static Gradient cardGradient = LinearGradient(colors: <Color>[
     HexColor('04294F'),

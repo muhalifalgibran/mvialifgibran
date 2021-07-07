@@ -9,7 +9,7 @@ class FirebaseNetwork {
   static CollectionReference items;
   static CollectionReference adjustment;
   static Stream<QuerySnapshot> usersStream;
-  static void register() async {
+  static register() async {
     firestore = FirebaseFirestore.instance;
     items = FirebaseFirestore.instance.collection('items');
     usersStream = FirebaseFirestore.instance.collection('items').snapshots();

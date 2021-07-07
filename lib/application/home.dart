@@ -1,5 +1,6 @@
 import 'package:egg_note/framework/core/core_behavior.dart';
 import 'package:egg_note/framework/core/core_view.dart';
+import 'package:egg_note/framework/core/res/res_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -33,23 +34,16 @@ class HomeView extends CoreView<HomeView, HomeBehavior, HomeData> {
   @override
   Widget loadScreen(
       BuildContext context, HomeBehavior behavior, HomeData state) {
-    const TextStyle optionStyle =
-        TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
-
     List<Widget> _widgetOptions = <Widget>[DashboardView(), AdjusmentView()];
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 20,
-        title: const Text('GoogleNavBar'),
-      ),
       body: Center(
         child: _widgetOptions.elementAt(state.selectedIndex),
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: ResColor.appBackground,
           boxShadow: [
             BoxShadow(
               blurRadius: 20,
@@ -74,7 +68,7 @@ class HomeView extends CoreView<HomeView, HomeBehavior, HomeData> {
               tabs: [
                 GButton(
                   icon: LineIcons.home,
-                  backgroundColor: Colors.blue[100],
+                  backgroundColor: Colors.deepOrange[400],
                   text: 'Home',
                 ),
                 GButton(

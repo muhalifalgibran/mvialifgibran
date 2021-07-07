@@ -69,10 +69,12 @@ class DashboardView
                   Map<String, dynamic> data =
                       document.data() as Map<String, dynamic>;
                   double harga = 0;
+                  print(data['grain']);
                   if (data['pickedItem'] == 0) {
-                    harga = data['amount'] * 2500.0;
+                    harga =
+                        data['amount'] * double.parse("${data['grain']}.0 ");
                   } else {
-                    harga = data['amount'] * 450000.0;
+                    harga = data['amount'] * double.parse("${data['rack']}.0 ");
                   }
                   FlutterMoneyFormatter fmf =
                       FlutterMoneyFormatter(amount: harga);
