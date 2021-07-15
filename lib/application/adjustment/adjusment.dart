@@ -45,6 +45,8 @@ class AdjustmentBehavior
     state.grain = grain;
     state.rack = rack;
 
+    box.write('rack', state.rack);
+    box.write('grain', state.grain);
     await prices.setPrices(grain, rack);
     render();
   }

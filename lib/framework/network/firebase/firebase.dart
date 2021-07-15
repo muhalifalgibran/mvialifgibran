@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:egg_note/framework/impl_repositories/firebase_item_repository.dart';
 import 'package:egg_note/framework/network/firebase/prices.dart';
 import 'package:egg_note/framework/network/firebase/items.dart';
+import 'package:egg_note/framework/repositories/itemRepository.dart';
 import 'package:get/get.dart';
 
 class FirebaseNetwork {
@@ -17,5 +19,6 @@ class FirebaseNetwork {
 
     Get.put(Items());
     Get.put(Prices());
+    Get.put<ItemRepository>(FirebaseItemRepository());
   }
 }

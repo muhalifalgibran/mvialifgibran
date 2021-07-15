@@ -1,5 +1,4 @@
 import 'package:egg_note/application/home.dart';
-import 'package:egg_note/framework/core/res/res_color.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -1,13 +1,16 @@
 import 'package:egg_note/application/dashboard/dashboard_view.dart';
 import 'package:egg_note/framework/core/core_view.dart';
-import 'package:egg_note/framework/core/res/res_color.dart';
+import 'package:egg_note/framework/models/item.dart';
+import 'package:egg_note/framework/res/res_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:line_icons/line_icons.dart';
 
 class AddDialog
     extends CoreChildView<DashboardView, DashboardBehavior, DashboardData> {
   final _controller_amount = TextEditingController();
+  final box = GetStorage();
 
   @override
   Widget loadingViewBuilder(BuildContext context) => Container(
@@ -132,6 +135,12 @@ class AddDialog
                 child: ElevatedButton(
                   onPressed: () {
                     state.amount = int.parse(_controller_amount.text);
+                    state.item = Item(
+                      amount: state.amount,
+                      pickedItem: state.itemPicked,
+                      rack: box.read("rack"),
+                      grain: box.read("grain"),
+                    );
                     behavior.addItemSold();
                   },
                   child: const Text('Tambahkan'),

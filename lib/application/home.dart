@@ -1,6 +1,6 @@
 import 'package:egg_note/framework/core/core_behavior.dart';
 import 'package:egg_note/framework/core/core_view.dart';
-import 'package:egg_note/framework/core/res/res_color.dart';
+import 'package:egg_note/framework/res/res_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
