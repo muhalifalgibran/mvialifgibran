@@ -1,9 +1,13 @@
 import 'package:egg_note/framework/core/core_behavior.dart';
 import 'package:egg_note/framework/core/core_view.dart';
+import 'package:egg_note/framework/res/res_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
+
+import 'adjustment/adjusment.dart';
+import 'dashboard/dashboard_view.dart';
 
 class HomeData {
   int selectedIndex = 0;
@@ -30,39 +34,16 @@ class HomeView extends CoreView<HomeView, HomeBehavior, HomeData> {
   @override
   Widget loadScreen(
       BuildContext context, HomeBehavior behavior, HomeData state) {
-    const TextStyle optionStyle =
-        TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
-    const List<Widget> _widgetOptions = <Widget>[
-      Text(
-        'Home',
-        style: optionStyle,
-      ),
-      Text(
-        'Likes',
-        style: optionStyle,
-      ),
-      Text(
-        'Search',
-        style: optionStyle,
-      ),
-      Text(
-        'Profile',
-        style: optionStyle,
-      ),
-    ];
+    List<Widget> _widgetOptions = <Widget>[DashboardView(), AdjusmentView()];
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 20,
-        title: const Text('GoogleNavBar'),
-      ),
       body: Center(
         child: _widgetOptions.elementAt(state.selectedIndex),
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: ResColor.appBackground,
           boxShadow: [
             BoxShadow(
               blurRadius: 20,
@@ -77,6 +58,7 @@ class HomeView extends CoreView<HomeView, HomeBehavior, HomeData> {
               rippleColor: Colors.grey[300],
               hoverColor: Colors.grey[100],
               gap: 8,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               activeColor: Colors.black,
               iconSize: 24,
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
@@ -86,19 +68,13 @@ class HomeView extends CoreView<HomeView, HomeBehavior, HomeData> {
               tabs: [
                 GButton(
                   icon: LineIcons.home,
+                  backgroundColor: Colors.deepOrange[400],
                   text: 'Home',
                 ),
                 GButton(
-                  icon: LineIcons.heart,
-                  text: 'Likes',
-                ),
-                GButton(
-                  icon: LineIcons.search,
-                  text: 'Search',
-                ),
-                GButton(
-                  icon: LineIcons.user,
-                  text: 'Profile',
+                  icon: LineIcons.adjust,
+                  backgroundColor: Colors.yellow[100],
+                  text: 'Pengaturan',
                 ),
               ],
               selectedIndex: state.selectedIndex,
@@ -114,7 +90,6 @@ class HomeView extends CoreView<HomeView, HomeBehavior, HomeData> {
 
   @override
   Widget onLoadingView(BuildContext context) {
-    // TODO: implement onLoadingView
-    throw UnimplementedError();
+    return Container();
   }
 }

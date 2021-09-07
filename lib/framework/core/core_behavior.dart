@@ -8,8 +8,8 @@ abstract class CoreBehavior<V extends CoreView<V, B, S>,
   S state;
   bool isBusy = true;
 
-  final Debouncer reloadDbn = Debouncer(Duration(milliseconds: 300));
-  final Debouncer renderDbn = Debouncer(Duration(milliseconds: 300));
+  final Debouncer reloadDbn = Debouncer(Duration(milliseconds: 1));
+  final Debouncer renderDbn = Debouncer(Duration(milliseconds: 1));
 
   Future refreshScreen() async {
     await reloadDbn.runLastFuture(() => onReady());

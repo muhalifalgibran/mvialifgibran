@@ -25,3 +25,21 @@ abstract class CoreView<V extends CoreView<V, B, S>,
   Widget loadScreen(BuildContext context, B behavior, S state);
   Widget onLoadingView(BuildContext context);
 }
+
+abstract class CoreChildView<V extends CoreView<V, B, S>,
+    B extends CoreBehavior<V, B, S>, S> extends StatelessWidget {
+  Widget loadScreen(BuildContext context, B behavior, S state);
+
+  final B behavior = Get.find<B>();
+
+  // specifify what to show when screen state is still not ready
+  // this view will be rendered every time actions is busy
+  Widget loadingViewBuilder(BuildContext context);
+
+  @override
+  Widget build(BuildContext context) {
+    return behavior.isBusy
+        ? loadingViewBuilder(context)
+        : loadScreen(context, behavior, behavior.state);
+  }
+}
