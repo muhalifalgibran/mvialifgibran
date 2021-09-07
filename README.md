@@ -1,5 +1,5 @@
 # egg_note MVI - MUH Alif Al Gibran
 
-untuk file model/frameworknya berada di branch development
+MVI aplikasi pencatatan penjualan telur. dapat mencatat telur terjual dan dapat mengganti harga jual
 
 ## Getting Started
